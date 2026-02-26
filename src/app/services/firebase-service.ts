@@ -5,16 +5,17 @@ import { FirebaseApp, initializeApp } from "firebase/app";
   providedIn: 'root',
 })
 export class FirebaseService {
-  
+
 
   firebaseConfig = {
-    apiKey: "AIzaSyAs-Ng4OHrHvjeLA1W3Z7Btl2ho4YHdXIA",
-    authDomain: "feed-reader-5e320.firebaseapp.com",
-    projectId: "feed-reader-5e320",
-    storageBucket: "feed-reader-5e320.firebasestorage.app",
-    messagingSenderId: "211840088399",
-    appId: "1:211840088399:web:c832cef1b9e3a5a48ced3a"
-  };
+  apiKey: "AIzaSyDWLLFJWOt6rsaWc_zYRjhGDy8RmzHbA2M",
+  authDomain: "feed-reader-56f2d.firebaseapp.com",
+  projectId: "feed-reader-56f2d",
+  storageBucket: "feed-reader-56f2d.firebasestorage.app",
+  messagingSenderId: "252825040713",
+  appId: "1:252825040713:web:485c44eee55ef839730c98"
+};
+
 
   app: FirebaseApp;
 
