@@ -1,1 +1,9 @@
-<p>login-component works!</p>
+<div>
+  <form (ngSubmit)="doLogin()">
+    <input type="text" [(ngModel)]="email" placeholder="email" name="email">
+    <input type="password" [(ngModel)]="password" placeholder="password" name="password">
+    <button type="submit">Login</button>
+  </form>
+  <p>{{errorMessage()}}</p>
+  <p>Non sei ancora registrato?? <a routerLink="/register">Registrati</a></p>
+</div>

@@ -2,6 +2,12 @@
     <h1>Feed Feed</h1>
     <nav>
         <a routerLink="/home">home</a>
-        <a routerLink="/login">login</a>
+        @if (authServ.isAuth()) {
+          <button (click)="doLogout()">logout ⏻</button>
+          <!-- <a (click)="doLogout()">logout</a> -->
+        }@else {
+          <button routerLink="/login">login ⎆</button>
+           <!-- <a routerLink="/login">login</a> -->
+        }
     </nav>
 </header>

@@ -16,10 +16,11 @@ export class FirebaseService {
   appId: "1:252825040713:web:485c44eee55ef839730c98"
 };
 
-
   app: FirebaseApp;
 
   constructor() {
     this.app = initializeApp(this.firebaseConfig);
   }
+
+
 }
