@@ -1,8 +1,7 @@
 import { Component , inject } from '@angular/core';
-import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth-service';
 import { Router } from '@angular/router';
-
 
 const passwordMatchValidator: ValidatorFn = (group: AbstractControl): ValidationErrors | null => {
   const password = group.get('password')?.value;
@@ -16,6 +15,7 @@ const passwordMatchValidator: ValidatorFn = (group: AbstractControl): Validation
   templateUrl: './register-component.html',
   styleUrl: './register-component.scss',
 })
+
 export class RegisterComponent {
 
   fb = inject(FormBuilder);
@@ -38,15 +38,12 @@ export class RegisterComponent {
 
     this.authServ.createUserWithEmailAndPassword(email!, password!)
       .then(() => {
-        this.router.navigate(['/home']); // redirige y el header ya mostrará logout
+        this.router.navigate(['/home']);
       })
       .catch((error) => {
         console.error(error.message);
       });
   }
-
-
-
 
 }
 
