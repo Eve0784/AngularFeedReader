@@ -1,1 +1,32 @@
-<p>home-component works!</p>
+<div class="home-wrapper">
+  <section class="hero">
+    <h1>Benvenuto su <span>Feed Feed</span></h1>
+    <p>La piattaforma dove puoi condividere, scoprire e connetterti con il mondo intorno a te.</p>
+    @if (!authServ.isAuth()) {
+      <div class="hero-buttons">
+        <button routerLink="/register">Inizia ora</button>
+        <button class="outline" routerLink="/login">Accedi</button>
+      </div>
+    } @else {
+      <p class="welcome">Sei connesso. Inizia a esplorare il tuo feed!</p>
+    }
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <span class="material-icons">rss_feed</span>
+      <h3>Il tuo Feed</h3>
+      <p>Tieni traccia di tutto ciò che ti interessa in un unico posto, aggiornato in tempo reale.</p>
+    </div>
+    <div class="card">
+      <span class="material-icons">people</span>
+      <h3>Comunità</h3>
+      <p>Connettiti con persone che condividono le tue passioni e i tuoi interessi.</p>
+    </div>
+    <div class="card">
+      <span class="material-icons">verified</span>
+      <h3>Affidabile</h3>
+      <p>Contenuti verificati e una piattaforma sicura per tutti gli utenti.</p>
+    </div>
+  </section>
+</div>

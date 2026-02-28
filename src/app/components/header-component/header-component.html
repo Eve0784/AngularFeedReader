@@ -1,13 +1,17 @@
 <header>
-    <h1>Feed Feed</h1>
-    <nav>
-        <a routerLink="/home">home</a>
-        @if (authServ.isAuth()) {
-          <button (click)="doLogout()">logout ⏻</button>
-          <!-- <a (click)="doLogout()">logout</a> -->
-        }@else {
-          <button routerLink="/login">login ⎆</button>
-           <!-- <a routerLink="/login">login</a> -->
-        }
-    </nav>
+  <h1>Feed Feed</h1>
+  <nav>
+    <a routerLink="/home">Home</a>
+    @if (authServ.isAuth()) {
+      <button (click)="doLogout()">
+        <span class="material-icons">logout</span>
+        Logout
+      </button>
+    } @else {
+      <button routerLink="/login">
+        <span class="material-icons">login</span>
+        Login
+      </button>
+    }
+  </nav>
 </header>

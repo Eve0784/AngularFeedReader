@@ -1,6 +1,6 @@
 import { inject, Injectable, signal } from '@angular/core';
 import { FirebaseService } from './firebase-service';
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword } from 'firebase/auth';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,7 @@ export class AuthService {
   firebaseServ = inject(FirebaseService);
   auth = getAuth(this.firebaseServ.app);
   isAuth = signal(false);
+
 
   constructor() {
     onAuthStateChanged(this.auth, (user) => {
@@ -31,5 +32,9 @@ export class AuthService {
    return signOut(this.auth);
 
   }
+
+createUserWithEmailAndPassword(email: string, password: string) {
+  return createUserWithEmailAndPassword(this.auth, email, password);
+}
 
 }

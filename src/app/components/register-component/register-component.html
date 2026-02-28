@@ -1,1 +1,36 @@
-<p>register-component works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <div>
+    <input type="email" formControlName="email" placeholder="Email" />
+    @if (email?.invalid && email?.touched) {
+      @if (email?.errors?.['required']) {
+        <span>L'email è richiesta</span>
+      }
+      @if (email?.errors?.['email']) {
+        <span>L'email non è valido</span>
+      }
+    }
+  </div>
+
+  <div>
+    <input type="password" formControlName="password" placeholder="password" />
+    @if (password?.invalid && password?.touched) {
+      @if (password?.errors?.['required']) {
+        <span>La password è richiesta</span>
+      }
+      @if (password?.errors?.['minlength']) {
+        <span>Minimo 6 caratteri</span>
+      }
+    }
+  </div>
+
+  <div>
+    <input type="password" formControlName="confirmPassword" placeholder="Ripettere la password" />
+    @if (form.errors?.['passwordMismatch'] && confirmPassword?.touched) {
+      <span>Le password non coincidono</span>
+    }
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Registrarse</button>
+
+</form>

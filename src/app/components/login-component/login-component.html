@@ -1,9 +1,26 @@
-<div>
+<div class="login-wrapper">
   <form (ngSubmit)="doLogin()">
-    <input type="text" [(ngModel)]="email" placeholder="email" name="email">
-    <input type="password" [(ngModel)]="password" placeholder="password" name="password">
-    <button type="submit">Login</button>
+    <h2>Accedi</h2>
+
+    <div>
+      <input type="text" [(ngModel)]="email" placeholder="Email" name="email" />
+    </div>
+
+    <div>
+      <input type="password" [(ngModel)]="password" placeholder="Password" name="password" />
+    </div>
+
+    @if (errorMessage()) {
+      <p class="error">{{ errorMessage() }}</p>
+    }
+
+    <button type="submit">
+      <span class="material-icons">login</span>
+      Accedi
+    </button>
+
+    <p class="register-link">
+      Non sei ancora registrato? <a routerLink="/register">Registrati</a>
+    </p>
   </form>
-  <p>{{errorMessage()}}</p>
-  <p>Non sei ancora registrato?? <a routerLink="/register">Registrati</a></p>
 </div>
