@@ -1,0 +1,14 @@
+<div class="newfeed-wrapper">
+
+<form [formGroup]="newFeedForm"(ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name">
+  </div>
+    <div>
+    <label for="url">Url</label>
+    <input id="url" formControlName="url">
+  </div>
+  <button type="submit">Create Feed</button>
+</form>
+</div>

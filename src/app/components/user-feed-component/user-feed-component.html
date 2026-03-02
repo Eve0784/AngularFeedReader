@@ -1,0 +1,26 @@
+<div class="feed-wrapper">
+  <h2>Ultime Notizie</h2>
+  <div class="feed-grid">
+
+    @for (news of rssServ.news(); track $index) {
+    <div class="feed-card">
+      <div class="feed-card-image">
+        <img [src]="news.image" />
+        <!-- <span class="material-icons">article</span> -->
+      </div>
+
+      <div class="feed-card-content">
+        <h3>{{news.title}}</h3>
+        <p>{{news.description}}</p>
+        <a href="{{news.url}}"> vai alla notizia</a>
+        <div class="feed-card-footer">
+          <span class="material-icons">schedule</span>
+          <small>{{timeAgo(news.pubDate) }}</small>
+        </div>
+      </div>
+    </div>
+
+    }
+
+  </div>
+</div>
