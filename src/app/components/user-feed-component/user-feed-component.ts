@@ -20,12 +20,11 @@ export class UserFeedComponent {
    })
   }
 
-
-  timeAgo(pubDate: string | Date): string {
-  const date = new Date(pubDate); // convierte string a Date si es necesario
+  timeAgo(pubDate: string | Date | undefined): string {
+  if (!pubDate) return 'Data non disponibile';
+  const date = new Date(pubDate);
   const diff = Date.now() - date.getTime();
   const hours = Math.floor(diff / (1000 * 60 * 60));
-
   if (hours < 1) return 'meno di 1 ora fa';
   if (hours === 1) return '1 ora fa';
   return `${hours} ore fa`;
